@@ -16,7 +16,7 @@ const Overview = () => {
         const fetchDashboard = async () => {
             try {
                 const token = localStorage.getItem('token');
-                const res = await axios.get('http://localhost:5000/api/teacher/dashboard', {
+                const res = await axios.get('https://smart-tuition-curriculum.onrender.com/api/teacher/dashboard', {
                     headers: { Authorization: `Bearer ${token}` }
                 });
                 if (res.data.success) {

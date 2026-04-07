@@ -11,7 +11,7 @@ const StudentAttendance = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const res = await axios.get('http://localhost:5000/api/student/dashboard', {
+                const res = await axios.get('https://smart-tuition-curriculum.onrender.com/api/student/dashboard', {
                     headers: { Authorization: `Bearer ${token}` }
                 });
                 setAttendance(res.data.data.attendance || []);

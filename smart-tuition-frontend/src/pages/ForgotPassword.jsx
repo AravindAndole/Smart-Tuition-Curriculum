@@ -13,7 +13,7 @@ const ForgotPassword = () => {
         setIsLoading(true);
 
         try {
-            const res = await axios.post('http://localhost:5000/api/auth/forgot-password', { email });
+            const res = await axios.post('https://smart-tuition-curriculum.onrender.com/api/auth/forgot-password', { email });
             setStatus({ type: 'success', message: res.data.message });
         } catch (err) {
             setStatus({ type: 'error', message: err.response?.data?.message || 'Failed to send reset link.' });

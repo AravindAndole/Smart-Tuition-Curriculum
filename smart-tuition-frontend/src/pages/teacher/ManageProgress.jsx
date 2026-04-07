@@ -11,7 +11,7 @@ const ManageProgress = () => {
         setLoading(true);
         try {
             const token = localStorage.getItem('token');
-            const res = await axios.get(`http://localhost:5000/api/teacher/progress?subject=${subject}`, {
+            const res = await axios.get(`https://smart-tuition-curriculum.onrender.com/api/teacher/progress?subject=${subject}`, {
                 headers: { Authorization: `Bearer ${token}` }
             });
             if (res.data.success) {
@@ -32,7 +32,7 @@ const ManageProgress = () => {
     const handleUpdate = async (studentId, rating) => {
         try {
             const token = localStorage.getItem('token');
-            const res = await axios.put(`http://localhost:5000/api/teacher/progress/${studentId}`, { subject, rating }, {
+            const res = await axios.put(`https://smart-tuition-curriculum.onrender.com/api/teacher/progress/${studentId}`, { subject, rating }, {
                 headers: { Authorization: `Bearer ${token}` }
             });
 

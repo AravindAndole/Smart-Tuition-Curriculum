@@ -23,7 +23,7 @@ const ResetPassword = () => {
         setIsLoading(true);
 
         try {
-            const res = await axios.post(`http://localhost:5000/api/auth/reset-password/${token}`, { password });
+            const res = await axios.post(`https://smart-tuition-curriculum.onrender.com/api/auth/reset-password/${token}`, { password });
             setStatus({ type: 'success', message: res.data.message });
             setTimeout(() => {
                 navigate('/login');

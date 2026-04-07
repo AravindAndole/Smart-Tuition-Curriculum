@@ -13,12 +13,12 @@ const ManageAttendance = () => {
                 const token = localStorage.getItem('token');
 
                 // 1. Fetch all students in the center
-                const studentsRes = await axios.get('http://localhost:5000/api/teacher/students', {
+                const studentsRes = await axios.get('https://smart-tuition-curriculum.onrender.com/api/teacher/students', {
                     headers: { Authorization: `Bearer ${token}` }
                 });
 
                 // 2. Fetch attendance for the selected date
-                const attendanceRes = await axios.get(`http://localhost:5000/api/attendance?date=${date}`, {
+                const attendanceRes = await axios.get(`https://smart-tuition-curriculum.onrender.com/api/attendance?date=${date}`, {
                     headers: { Authorization: `Bearer ${token}` }
                 });
 
@@ -50,7 +50,7 @@ const ManageAttendance = () => {
     const handleMark = async (studentId, status) => {
         try {
             const token = localStorage.getItem('token');
-            const res = await axios.post('http://localhost:5000/api/attendance', {
+            const res = await axios.post('https://smart-tuition-curriculum.onrender.com/api/attendance', {
                 studentId,
                 status,
                 date

@@ -14,7 +14,7 @@ const StudentHomework = () => {
         const fetchData = async () => {
             try {
                 // 1. Fetch official dashboard summary
-                const res = await axios.get('http://localhost:5000/api/student/dashboard', {
+                const res = await axios.get('https://smart-tuition-curriculum.onrender.com/api/student/dashboard', {
                     headers: { Authorization: `Bearer ${token}` }
                 });
                 let officialHomework = res.data.data.homework || [];
@@ -22,10 +22,10 @@ const StudentHomework = () => {
                 // 2. If parent, fetch chat messages to append "Pending Teacher" requests natively
                 if (user?.role === 'parent') {
                     try {
-                        const usersRes = await axios.get('http://localhost:5000/api/chat/users', { headers: { Authorization: `Bearer ${token}` } });
+                        const usersRes = await axios.get('https://smart-tuition-curriculum.onrender.com/api/chat/users', { headers: { Authorization: `Bearer ${token}` } });
                         const teacher = usersRes.data.data[0];
                         if (teacher) {
-                            const chatRes = await axios.get(`http://localhost:5000/api/chat/${teacher._id}`, { headers: { Authorization: `Bearer ${token}` } });
+                            const chatRes = await axios.get(`https://smart-tuition-curriculum.onrender.com/api/chat/${teacher._id}`, { headers: { Authorization: `Bearer ${token}` } });
                             const messages = chatRes.data.data;
                             
                             // Map those messages to the homework list visually
@@ -142,7 +142,7 @@ const StudentHomework = () => {
                             setSendSuccess('');
                             try {
                                 // 1. Find the parent's assigned teacher using the chat users endpoint
-                                const usersRes = await axios.get('http://localhost:5000/api/chat/users', {
+                                const usersRes = await axios.get('https://smart-tuition-curriculum.onrender.com/api/chat/users', {
                                     headers: { Authorization: `Bearer ${token}` }
                                 });
                                 // In the parent chat flow, the array returned only holds their 1 teacher
@@ -155,7 +155,7 @@ const StudentHomework = () => {
                                 }
 
                                 // 2. Send the message payload
-                                await axios.post('http://localhost:5000/api/chat/message', {
+                                await axios.post('https://smart-tuition-curriculum.onrender.com/api/chat/message', {
                                     receiverId: teacher._id,
                                     content: `[Homework Assignment Request]: ${customAssignment.trim()}`
                                 }, {

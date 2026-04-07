@@ -15,12 +15,12 @@ const ManageFees = () => {
             try {
                 // First get all enrolled students for this center
                 // 1. Fetch all students in the center
-                const studentsRes = await axios.get('http://localhost:5000/api/teacher/students', {
+                const studentsRes = await axios.get('https://smart-tuition-curriculum.onrender.com/api/teacher/students', {
                     headers: { Authorization: `Bearer ${token}` }
                 });
 
                 // 2. Fetch fees for the selected month to merge in known statuses
-                const feesRes = await axios.get(`http://localhost:5000/api/fees?month=${month}`, {
+                const feesRes = await axios.get(`https://smart-tuition-curriculum.onrender.com/api/fees?month=${month}`, {
                     headers: { Authorization: `Bearer ${token}` }
                 });
 
@@ -60,7 +60,7 @@ const ManageFees = () => {
                 return;
             }
 
-            const res = await axios.post('http://localhost:5000/api/fees', {
+            const res = await axios.post('https://smart-tuition-curriculum.onrender.com/api/fees', {
                 studentId,
                 month,
                 amount: 150,

@@ -23,7 +23,7 @@ const StudentsList = () => {
         const fetchStudents = async () => {
             try {
                 const token = localStorage.getItem('token');
-                const res = await axios.get('http://localhost:5000/api/teacher/students', {
+                const res = await axios.get('https://smart-tuition-curriculum.onrender.com/api/teacher/students', {
                     headers: { Authorization: `Bearer ${token}` }
                 });
                 if (res.data.success) {
@@ -48,7 +48,7 @@ const StudentsList = () => {
         const token = localStorage.getItem('token'); // Fallback if auth context isn't passed down easily
 
         try {
-            const res = await axios.post('http://localhost:5000/api/auth/student', {
+            const res = await axios.post('https://smart-tuition-curriculum.onrender.com/api/auth/student', {
                 name: newStudentName,
                 email: newStudentEmail,
                 password: newStudentPassword
@@ -84,7 +84,7 @@ const StudentsList = () => {
         setUpdateLoading(true);
         const token = localStorage.getItem('token');
         try {
-            const res = await axios.put(`http://localhost:5000/api/teacher/students/${id}`, editForm, {
+            const res = await axios.put(`https://smart-tuition-curriculum.onrender.com/api/teacher/students/${id}`, editForm, {
                 headers: { Authorization: `Bearer ${token}` }
             });
             // Update local state
@@ -102,7 +102,7 @@ const StudentsList = () => {
         if (!window.confirm("Are you sure you want to delete this student and their account entirely?")) return;
         const token = localStorage.getItem('token');
         try {
-            await axios.delete(`http://localhost:5000/api/teacher/students/${id}`, {
+            await axios.delete(`https://smart-tuition-curriculum.onrender.com/api/teacher/students/${id}`, {
                 headers: { Authorization: `Bearer ${token}` }
             });
             setStudents(prev => prev.filter(s => s._id !== id));

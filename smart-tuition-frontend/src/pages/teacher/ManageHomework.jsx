@@ -19,7 +19,7 @@ const ManageHomework = () => {
     const fetchAssignments = async () => {
         try {
             const token = localStorage.getItem('token');
-            const res = await axios.get('http://localhost:5000/api/homework', {
+            const res = await axios.get('https://smart-tuition-curriculum.onrender.com/api/homework', {
                 headers: { Authorization: `Bearer ${token}` }
             });
             if (res.data.success) {
@@ -35,7 +35,7 @@ const ManageHomework = () => {
     const fetchPendingRequests = async () => {
         try {
             const token = localStorage.getItem('token');
-            const res = await axios.get('http://localhost:5000/api/homework/pending', {
+            const res = await axios.get('https://smart-tuition-curriculum.onrender.com/api/homework/pending', {
                 headers: { Authorization: `Bearer ${token}` }
             });
             if (res.data.success) {
@@ -62,7 +62,7 @@ const ManageHomework = () => {
 
         try {
             const token = localStorage.getItem('token');
-            const res = await axios.post('http://localhost:5000/api/homework', {
+            const res = await axios.post('https://smart-tuition-curriculum.onrender.com/api/homework', {
                 subject,
                 title,
                 description,

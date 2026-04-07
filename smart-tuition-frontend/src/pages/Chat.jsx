@@ -28,7 +28,7 @@ const Chat = () => {
         if (!token || !user) return;
 
         // Connect to Socket.io with JWT token
-        const newSocket = io('http://localhost:5000', {
+        const newSocket = io('https://smart-tuition-curriculum.onrender.com', {
             auth: { token }
         });
 
@@ -37,7 +37,7 @@ const Chat = () => {
         // Fetch initial list of valid chat partners
         const fetchUsers = async () => {
             try {
-                const res = await axios.get('http://localhost:5000/api/chat/users');
+                const res = await axios.get('https://smart-tuition-curriculum.onrender.com/api/chat/users');
                 setUsersList(res.data.data);
             } catch (err) {
                 console.error('Failed to fetch chat users', err);
@@ -77,7 +77,7 @@ const Chat = () => {
 
         try {
             // Fetch history and automatically mark unread as read in backend
-            const res = await axios.get(`http://localhost:5000/api/chat/${targetUser._id}`);
+            const res = await axios.get(`https://smart-tuition-curriculum.onrender.com/api/chat/${targetUser._id}`);
             setMessages(res.data.data);
         } catch (err) {
             console.error('Failed to fetch messages', err);

@@ -22,7 +22,7 @@ const RegisterTeacher = () => {
         setIsLoading(true);
 
         try {
-            const res = await axios.post('http://localhost:5000/api/auth/register/teacher', formData);
+            const res = await axios.post('https://smart-tuition-curriculum.onrender.com/api/auth/register/teacher', formData);
             login(res.data.user, res.data.token);
             navigate('/dashboard');
         } catch (err) {

@@ -15,7 +15,7 @@ const StudentOverview = () => {
     useEffect(() => {
         const fetchDashboardData = async () => {
             try {
-                const res = await axios.get('http://localhost:5000/api/student/dashboard', {
+                const res = await axios.get('https://smart-tuition-curriculum.onrender.com/api/student/dashboard', {
                     headers: { Authorization: `Bearer ${token}` }
                 });
 
@@ -40,10 +40,10 @@ const StudentOverview = () => {
                 // Add pending custom requests from parent
                 if (user?.role === 'parent') {
                     try {
-                        const usersRes = await axios.get('http://localhost:5000/api/chat/users', { headers: { Authorization: `Bearer ${token}` } });
+                        const usersRes = await axios.get('https://smart-tuition-curriculum.onrender.com/api/chat/users', { headers: { Authorization: `Bearer ${token}` } });
                         const teacher = usersRes.data.data[0];
                         if (teacher) {
-                            const chatRes = await axios.get(`http://localhost:5000/api/chat/${teacher._id}`, { headers: { Authorization: `Bearer ${token}` } });
+                            const chatRes = await axios.get(`https://smart-tuition-curriculum.onrender.com/api/chat/${teacher._id}`, { headers: { Authorization: `Bearer ${token}` } });
                             const pendingRequests = chatRes.data.data.filter(m => m.content.startsWith('[Homework Assignment Request]: ')).length;
                             totalHomework += pendingRequests;
                         }

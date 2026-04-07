@@ -12,7 +12,7 @@ const ManageNotices = () => {
     const fetchNotices = async () => {
         try {
             const token = localStorage.getItem('token');
-            const res = await axios.get('http://localhost:5000/api/notices', {
+            const res = await axios.get('https://smart-tuition-curriculum.onrender.com/api/notices', {
                 headers: { Authorization: `Bearer ${token}` }
             });
             if (res.data.success) {
@@ -38,7 +38,7 @@ const ManageNotices = () => {
 
         try {
             const token = localStorage.getItem('token');
-            const res = await axios.post('http://localhost:5000/api/notices', {
+            const res = await axios.post('https://smart-tuition-curriculum.onrender.com/api/notices', {
                 title,
                 content
             }, {

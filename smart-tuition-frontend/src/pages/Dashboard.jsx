@@ -17,7 +17,7 @@ const Dashboard = () => {
                     // Handled outside
                 } else if (user?.role === 'student' || user?.role === 'parent') {
                     // Fetch secure student read-only dashboard
-                    const res = await axios.get('http://localhost:5000/api/student/dashboard', {
+                    const res = await axios.get('https://smart-tuition-curriculum.onrender.com/api/student/dashboard', {
                         headers: { Authorization: `Bearer ${token}` }
                     });
                     setDashboardData(res.data.data);

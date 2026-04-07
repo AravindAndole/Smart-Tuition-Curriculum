@@ -1,0 +1,71 @@
+﻿node : C:\Users\aravi\O
+neDrive\Desktop\rtrp\sm
+art-tuition-backend\nod
+e_modules\express\lib\r
+outer\route.js:216
+At line:1 char:1
++ node server.js 2>&1 
+| Out-File -Encoding 
+utf8 error8.log
++ ~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo     
+         : NotSpecifi  
+  ed: (C:\Users\arav   
+ i\...er\route.js:2    
+16:String) [], Rem    
+oteException
+    + FullyQualifiedEr 
+   rorId : NativeComm  
+  andError
+ 
+        throw new 
+Error(msg);
+        ^
+
+Error: Route.get() 
+requires a callback 
+function but got a 
+[object Undefined]
+    at 
+Route.<computed> [as 
+get] (C:\Users\aravi\On
+eDrive\Desktop\rtrp\sma
+rt-tuition-backend\node
+_modules\express\lib\ro
+uter\route.js:216:15)
+    at 
+proto.<computed> [as 
+get] (C:\Users\aravi\On
+eDrive\Desktop\rtrp\sma
+rt-tuition-backend\node
+_modules\express\lib\ro
+uter\index.js:521:19)
+    at 
+Object.<anonymous> (C:\
+Users\aravi\OneDrive\De
+sktop\rtrp\smart-tuitio
+n-backend\routes\teache
+rRoutes.js:6:8)
+    at Module._compile 
+(node:internal/modules/
+cjs/loader:1812:14)
+    at Object..js (node
+:internal/modules/cjs/l
+oader:1943:10)
+    at Module.load (nod
+e:internal/modules/cjs/
+loader:1533:32)
+    at Module._load (no
+de:internal/modules/cjs
+/loader:1335:12)
+    at wrapModuleLoad (
+node:internal/modules/c
+js/loader:255:19)
+    at Module.require (
+node:internal/modules/c
+js/loader:1556:12)
+    at require (node:in
+ternal/modules/helpers:
+152:16)
+
+Node.js v24.14.0

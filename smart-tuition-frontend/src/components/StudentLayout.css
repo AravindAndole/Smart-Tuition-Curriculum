@@ -1,0 +1,131 @@
+.student-layout {
+    display: flex;
+    min-height: calc(100vh - 80px);
+    /* Account for navbar */
+    max-width: 1200px;
+    margin: 2rem auto;
+    gap: 2rem;
+    padding: 0 1rem;
+}
+
+.student-sidebar {
+    width: 260px;
+    flex-shrink: 0;
+    background: rgba(15, 23, 42, 0.4);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    padding: 1.5rem 0;
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+}
+
+.student-sidebar .sidebar-header {
+    padding: 0 1.5rem 1.5rem;
+    border-bottom: 1px solid var(--glass-border);
+    margin-bottom: 1rem;
+}
+
+.student-sidebar .sidebar-header h2 {
+    font-size: 1.25rem;
+    color: var(--text-main);
+    margin-bottom: 0.2rem;
+}
+
+.student-sidebar .sidebar-header p {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    font-family: monospace;
+}
+
+.student-sidebar .sidebar-nav {
+    display: flex;
+    flex-direction: column;
+}
+
+.student-sidebar .nav-link {
+    padding: 1rem 1.5rem;
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: all 0.2s ease;
+    border-left: 3px solid transparent;
+    font-weight: 500;
+}
+
+.student-sidebar .nav-link:hover {
+    background: rgba(255, 255, 255, 0.03);
+    color: var(--text-main);
+}
+
+.student-sidebar .nav-link.active {
+    background: rgba(89, 104, 236, 0.1);
+    /* Primary color low opacity */
+    color: var(--primary);
+    border-left-color: var(--primary);
+}
+
+.student-main-content {
+    flex: 1;
+    background: rgba(15, 23, 42, 0.4);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    padding: 2.5rem;
+    min-width: 0;
+    /* Prevents flexbox overflow */
+}
+
+/* Base styling for read-only tables and items */
+.student-data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1.5rem;
+}
+
+.student-data-table th,
+.student-data-table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.student-data-table th {
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+.status-badge {
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.status-green {
+    color: #10B981;
+    background: rgba(16, 185, 129, 0.1);
+}
+
+.status-red {
+    color: #EF4444;
+    background: rgba(239, 68, 68, 0.1);
+}
+
+.status-yellow {
+    color: #F59E0B;
+    background: rgba(245, 158, 11, 0.1);
+}
+
+@media (max-width: 768px) {
+    .student-layout {
+        flex-direction: column;
+        margin: 1rem auto;
+    }
+
+    .student-sidebar {
+        width: 100%;
+    }
+
+    .student-main-content {
+        padding: 1.5rem;
+    }
+}

@@ -1,0 +1,66 @@
+[
+  {
+    "email": "teacher1772604731446@test.com",
+    "role": "teacher"
+  },
+  {
+    "email": "parent1772604732234@test.com",
+    "role": "parent"
+  },
+  {
+    "email": "teacher1772604753129@test.com",
+    "role": "teacher"
+  },
+  {
+    "email": "parent1772604753702@test.com",
+    "role": "parent"
+  },
+  {
+    "email": "john@gmail.com",
+    "role": "teacher"
+  },
+  {
+    "email": "teacher_1772606960025@test.com",
+    "role": "teacher"
+  },
+  {
+    "email": "parent_1772606960025@test.com",
+    "role": "parent"
+  },
+  {
+    "email": "teacher_fee_1772607195998@test.com",
+    "role": "teacher"
+  },
+  {
+    "email": "parent_fee_1772607195998@test.com",
+    "role": "parent"
+  },
+  {
+    "email": "JOHN@gmail.com",
+    "role": "teacher"
+  },
+  {
+    "email": "teacher_stu_1772609976014@test.com",
+    "role": "teacher"
+  },
+  {
+    "email": "stu9351_timmytester@tuition.local",
+    "role": "student"
+  },
+  {
+    "email": "stu1477_andolearavindkumar@tuition.local",
+    "role": "student"
+  },
+  {
+    "email": "teacher3@test.com",
+    "role": "teacher"
+  },
+  {
+    "email": "aravi@email.com",
+    "role": "teacher"
+  },
+  {
+    "email": "john1@gmail.com",
+    "role": "teacher"
+  }
+]
